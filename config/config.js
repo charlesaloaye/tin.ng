@@ -4,7 +4,7 @@ import morgan from 'morgan';
 // Instance of Express
 export const app = express();
 // App Port Number
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 // Morgan as Logger
 app.use(morgan('tiny'));
 // Default View Engine
