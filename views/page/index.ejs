@@ -1,0 +1,33 @@
+<%- include('../partials/header') %> 
+
+<% if (!locals.action) { %>
+ <div class="card shadow p-5">
+    <form action="/" method="post">
+        <h3 class="text-center">Welcome to <%= setting.title %></h3>
+        <p class="text-center text-primary"><%= setting.description %></p>
+        <div class="input-group mb-3">
+            <input name="url" type="text" class="form-control" placeholder="Enter Url">
+            <button class="input-group-btn btn btn-primary" type="submit"> Short Url</button>
+        </div>
+    </form>
+ </div>
+<% } %>
+
+
+<% if (locals.action) { %>
+    <div class="card shadow p-5">
+       <form action="/" method="post">
+           <h3 class="text-center">Shorten Url</h3>
+           <p class="text-center text-primary"><%= data.result_url %></p>
+           <div class="input-group mb-3">
+               <input type="text" class="form-control" placeholder="Enter Url">
+               <a class="input-group-btn btn btn-primary" href="/"> Create Another Url</a>
+           </div>
+       </form>
+    </div>
+   <% } %>
+
+
+
+
+<%- include('../partials/footer') %>
