@@ -19,13 +19,13 @@ app.post('/', async (req, res) => {
 
     try {
         const API_URL = 'https://cleanuri.com/api/v1/shorten';
-        const response = await axios.get(API_URL, req.body);
-        const result = JSON.parse(response.data);
+        const response = await axios.post(API_URL, req.body);
+        const result = response.data;
 
-        res.render('page/index', { data: result, action: 'yes' });
+        res.render('page/index', { data: result, action: 'yes', setting });
 
     } catch (error) {
-        res.status(500).send(error.message)
+        res.render('page/index', { error: error.message, action: '', setting });
     }
 
 })
