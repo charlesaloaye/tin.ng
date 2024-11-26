@@ -1,5 +1,6 @@
-<%- include('../partials/header') %> <% if (!locals.action) { %> <% if
-(!locals.error) { %>
+<%- include('../partials/header') %> 
+<% if (!locals.action) { %> 
+<% if (!locals.error) { %>
 
 <div class="card shadow p-5">
   <form action="/" method="post">
@@ -18,7 +19,9 @@
     </div>
   </form>
 </div>
-<% } %> <% } %> <% if (locals.action) { %>
+<% } %> 
+<% } %> 
+<% if (locals.action) { %>
 <div class="card shadow p-5">
   <h3 class="text-center">Shorten Url</h3>
   <h4 class="text-center">New link generated</h4>
@@ -32,7 +35,8 @@
     <a class="input-group-btn btn btn-primary" href="/"> Create Another Url</a>
   </div>
 </div>
-<% } %> <% if (locals.error) { %>
+<% } %> 
+<% if (locals.error) { %>
 <div class="card shadow p-5 text-end">
   <h3 class="text-center">Error Occured</h3>
   <p class="text-center text-primary"><%= error %></p>
@@ -40,4 +44,5 @@
     <a class="input-group-btn btn btn-danger" href="/"> Try Again</a>
   </div>
 </div>
-<% } %> <%- include('../partials/footer') %>
+<% } %> 
+<%- include('../partials/footer') %>
